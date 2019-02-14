@@ -42,6 +42,7 @@ const animateKey=(keySelector)=>{
 };
 const playAudio=(audioElementSel)=>{
 	let audioEl=document.querySelector(audioElementSel);
+	audioEl.currentTime=0;
 	audioEl.play();
 };
 const help=(helpSel,display)=>{
