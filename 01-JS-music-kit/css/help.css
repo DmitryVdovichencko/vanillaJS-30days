@@ -1,0 +1,13 @@
+.help{
+	width:100%;
+	background-color: rgba(0,0,0, 0.7);
+	border-radius: 5px;
+	color:white;
+	font-size: 2em;
+	padding: 10px;
+	display:none;
+	
+}
+.help_display{
+	display: block;
+}
