@@ -5,24 +5,22 @@ minutesHand=document.querySelector(".clock__minute-hand"),
 secondsHand=document.querySelector(".clock__second-hand"),
 
 
-timeToDeg=(timeUnit,timeStep,conv)=>((timeUnit+timeStep/conv)*360)/60,
-rotateEl=(el,transitionTime,timeValue,timeStep,conv)=>{
+timeToDeg=(timeUnit,timeStep,conv,countUnit)=>((timeUnit+timeStep/conv)*360)/countUnit,
+rotateEl=(el,transitionTime,timeValue,timeStep,conv,countUnit)=>{
 	timeValue===0 ?
-	el.style.cssText= `transform:rotate(${timeToDeg(timeValue,timeStep,conv)}deg);` :
-	el.style.cssText= `transform:rotate(${timeToDeg(timeValue,timeStep,conv)}deg); transition: all 0.05s; transition-timing-function: cubic-bezier(.1,2.7,.58,1);`
+	el.style.cssText= `transform:rotate(${timeToDeg(timeValue,timeStep,conv,countUnit)}deg);` :
+	el.style.cssText= `transform:rotate(${timeToDeg(timeValue,timeStep,conv,countUnit)}deg); transition: all 0.05s; transition-timing-function: cubic-bezier(.1,2.7,.58,1);`
 },	
 
 rotateHands=()=>{
 	const now = new Date(),
 	sec=now.getSeconds(),
-	minutes=now.getMinutes()
+	minutes=now.getMinutes(),
 	hours=now.getHours();
-	rotateEl(secondsHand,0.05,sec,0,1);
-	rotateEl(minutesHand,0.05,minutes,sec,60);
-	rotateEl(hoursHand,0.05,hours,minutes,60);
-	// sec===0 ?
-	// secondsHand.style.cssText= `transform:rotate(${sec*6}deg);` :
-	// secondsHand.style.cssText= `transform:rotate(${sec*6}deg); transition: all 0.05s; transition-timing-function: cubic-bezier(.1,2.7,.58,1);`
+	rotateEl(secondsHand,0.05,sec,0,1,60,60);
+	rotateEl(minutesHand,0.05,minutes,sec,60,60);
+	rotateEl(hoursHand,0.05,hours,minutes,60,12);
+
   
   
 };
