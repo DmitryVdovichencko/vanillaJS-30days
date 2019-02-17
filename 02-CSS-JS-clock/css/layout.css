@@ -3,7 +3,7 @@
 body{
 	margin:0px;
 	padding:0px;
-	font-family: 'Work Sans', sans-serif;
+	font-family: 'Hammersmith One', sans-serif;
 	background:url("../img/bg.png") repeat;
 	max-height: 100vh;
 }
@@ -12,6 +12,7 @@ h1{
 	width:100%;
 	text-align: center;
 	color:white;
+	font-size: 3em;
 }
 .layout{
 	margin: 0px;

@@ -8,25 +8,30 @@
 	box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.6);
 	box-sizing: border-box;
 	position: absolute;
-	left:450px;
-	top:250px;
+	left:-webkit-calc(50% - 150px);
+	left:-moz-calc(50% - 150px);
+	left:calc(50% - 150px);
+	top:-webkit-calc(50% - 150px);
+	top:-moz-calc(50% - 150px);
+	top:calc(50% - 150px);
 
 }
 .clock__hour-hand, .clock__minute-hand, .clock__second-hand {
-	width:100px;
-	height:5px;
+	width:5px;
+	height:100px;
 	background:white;
 	position:absolute;
-	right: 50%;
-	top:50%;
-	transform-origin: 100%;
-	transform:rotate(90deg);
-	transition: all 0.05s;
-	transition-timing-function: cubic-bezier(.1,2.7,.58,1);
+	left: 50%;
+	bottom: 50%;
+	border-radius: 2.5px;
+	transform-origin: bottom;
+	/*transform:rotate(90deg);*/
+	/*transition: all 0.05s;*/
+	
 }
 .clock__minute-hand{
-	width:110px;
+	height:110px;
 }
 .clock__second-hand{
-	width:120px;
+	height:120px;
 }
