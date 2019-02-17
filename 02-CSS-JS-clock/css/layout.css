@@ -1,0 +1,30 @@
+@import url('clock.css');
+
+body{
+	margin:0px;
+	padding:0px;
+	font-family: 'Work Sans', sans-serif;
+	background:url("../img/bg.png") repeat;
+	max-height: 100vh;
+}
+h1{
+	display: block;
+	width:100%;
+	text-align: center;
+	color:white;
+}
+.layout{
+	margin: 0px;
+	padding:0px 15%;
+	box-sizing: border-box;
+	width:100%;
+	
+	
+
+	
+/*	display:flex;
+	flex-flow:column nowrap;
+	justify-content: flex-start;
+	align-items: center;*/
+
+}
