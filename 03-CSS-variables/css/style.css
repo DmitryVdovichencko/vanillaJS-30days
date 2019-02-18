@@ -1,0 +1,47 @@
+body{
+
+	margin:0px;
+	padding:0px;
+	font-family: 'Roboto Slab', serif;
+	background: #162E3E;
+	color:white;
+	max-height: 100vh;
+	font-weight: 100;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: center;
+
+}
+h1{
+	font-weight: 700;
+	font-size: 3em;
+	text-align: center;
+}
+.h1__em{
+ color:#D2FEB3;
+}
+.controls{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+}
+.controls__item{
+	font-size:2em;
+}
+.controls__item label{
+	padding:10px;
+}
+.image{
+	margin:20px 5px;
+	border:var(--spacing) solid var(--base);
+	max-width:95%;
+	box-sizing: border-box;
+	
+}
+.image img{
+	width: 100%;
+	box-sizing: border-box;
+	filter: blur( var(--blur) );
+}
