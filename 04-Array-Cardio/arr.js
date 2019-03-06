@@ -84,17 +84,13 @@
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
-    const cars = data.reduce((count, current)=> {
-      if(current==='car'){
-        count+=1;
+    const transportation = data.reduce((obj, item)=> {
+      if(!obj[item]){
+        obj[item]=0;
       }
-        return count;
-      },0 );
-    const trucks = data.reduce((count, current)=> {
-      if(current==='truck'){
-        count+=1;
+      obj[item]++;
+        return obj;
       }
-        return count;
-      },0 );
-    console.log(cars);
-    console.log(trucks);
+      ,{} );
+
+console.log(transportation);

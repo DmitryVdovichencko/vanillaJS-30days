@@ -1,0 +1,35 @@
+ body{
+  padding:0px;
+  margin:0px;
+  box-sizing: border-box;
+  width:100%;
+  font-family: 'Bree Serif', serif;
+ }
+ .panels{
+  display:flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+
+ }
+ .panel{
+  height:100vh;
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  font-size: 3em;
+  display: flex;
+  flex-flow:column nowrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+ }
+ .panel p:nth-child(2){
+  font-size:3em;
+ 
+ }
+    .panel1 { background-image:url(https://source.unsplash.com/BcVvVvqiCGA/1500x1500); }
+    .panel2 { background-image:url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500); }
+    .panel3 { background-image:url(https://source.unsplash.com/8kDOOrs608I/1500x1500); }
+    .panel4 { background-image:url(https://source.unsplash.com/7KqJCmlKWDI/1500x1500); }
+    .panel5 { background-image:url(https://source.unsplash.com/umRPY9w3q1c/1500x1500); }
+    /* Flex Children */
