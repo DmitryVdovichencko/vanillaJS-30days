@@ -37,7 +37,9 @@ h1{
 	margin:20px 5px;
 	border:var(--spacing) solid var(--base);
 	max-width:95%;
+	height: 600px;
 	box-sizing: border-box;
+	overflow: hidden;
 	
 }
 .image img{
