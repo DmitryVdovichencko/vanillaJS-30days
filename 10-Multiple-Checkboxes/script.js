@@ -12,9 +12,10 @@ const findChecked=(clickEl,elementsArr)=>{
 	return res;
 }
 const indexCheck = (begin,end) => {
-	const indexObj={}
+	const indexObj={};
+	
 	if(begin!==end){
- 		indexObj.begin= Math.min(begin, end);
+		indexObj.begin= Math.min(begin, end);
  		indexObj.end= Math.max(begin, end);
 	}
 	return indexObj;
@@ -38,7 +39,10 @@ const shiftDetect=(event)=>{
 	
 	if(count>1){
  		console.log(indexCheck(begin,end));
- 		addChecked(indexCheck(begin,end).begin, indexCheck(begin,end).end, checkBoxes );
+ 		setTimeout(function(){
+ 			addChecked(indexCheck(begin,end).begin, indexCheck(begin,end).end, checkBoxes );
+ 		}, 200);
+ 		
 		count=0;
 	}
 
