@@ -15,8 +15,8 @@ const indexCheck = (begin,end) => {
 	const indexObj={};
 	
 	if(begin!==end){
-		indexObj.begin= Math.min(begin, end);
- 		indexObj.end= Math.max(begin, end);
+		indexObj.begin= Math.min(begin, end)+1;
+ 		indexObj.end= Math.max(begin, end)-1;
 	}
 	return indexObj;
 }
@@ -25,7 +25,7 @@ const addChecked=(begin,end,elementsArr)=>{
  		return (i>=begin&&i<=end);
 	});
 	checkedArr.forEach(function(item) {
-		item.checked = true;
+		item.checked = (item.checked) ? false : true;
 	});
 }
 let count = 0, begin = 0, end = 0;
