@@ -1,16 +1,17 @@
-
+// create Array from Checkboxes elements collection
 const checkBoxes = Array.prototype.slice.call( document.querySelectorAll('input[type="checkbox"]'), 0 );
+// find indexes of checked elments
 const findChecked=(clickEl,elementsArr)=>{
 	let res;
 	elementsArr.forEach(function(item, i) {
-		
-		 if (clickEl === item){
-		 	
+		if (clickEl === item){
 		 	res = i;
 		 }
 	});
 	return res;
 }
+
+//check indexes to flip if end<begin and also exclude first and last elments
 const indexCheck = (begin,end) => {
 	const indexObj={};
 	
@@ -20,6 +21,7 @@ const indexCheck = (begin,end) => {
 	}
 	return indexObj;
 }
+// adding checked attr function to els from begin to end
 const addChecked=(begin,end,elementsArr)=>{
 	const checkedArr = elementsArr.filter(function(item,i) {
  		return (i>=begin&&i<=end);
@@ -29,6 +31,7 @@ const addChecked=(begin,end,elementsArr)=>{
 	});
 }
 let count = 0, begin = 0, end = 0;
+//common function when event detected
 const shiftDetect=(event)=>{
 	
 	if (event.shiftKey) {
@@ -47,5 +50,5 @@ const shiftDetect=(event)=>{
 	}
 
 }
-
+// shft key with click event detection
 document.addEventListener('mousedown', shiftDetect);

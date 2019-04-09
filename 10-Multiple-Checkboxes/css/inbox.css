@@ -6,8 +6,8 @@
 
 }
 .inbox__header{
-	padding:1em 1em 0px 1em ;
-	font-size: 2em;
+	padding:15px 15px 0px 15px ;
+	font-size: 1.3em;
 }
 .inbox__content {
 	padding:15px;
@@ -29,5 +29,5 @@
     }
 
     input[type="checkbox"] {
-      margin: 20px;
+      margin: 10px;
     }
