@@ -31,7 +31,9 @@ const addChecked=(begin,end,elementsArr)=>{
 	});
 }
 let count = 0, begin = 0, end = 0;
+
 //common function when event detected
+
 const shiftDetect=(event)=>{
 	
 	if (event.shiftKey) {
