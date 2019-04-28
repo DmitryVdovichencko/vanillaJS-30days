@@ -1,0 +1,48 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  background: #000;
+  width:100%;
+  min-height: 100vh;
+font-family: 'Gugi', cursive;
+  align-items: center;
+  justify-content: center;
+}
+h1{
+  color:#fff;
+}
+.key{
+ border: solid 1px #fff;
+  border-radius:2px;
+  padding:5px;
+}
+.congrats{
+  display: none;
+}
+.content{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  background: #000;
+  width: 100%;
+  height:100%;
+  align-items: center;
+  justify-content: center;
+}
+.content.green{
+  background: #29B657;
+}
+.congrats.show{
+  display: block;
+}
