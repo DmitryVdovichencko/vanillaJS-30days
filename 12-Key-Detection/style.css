@@ -42,7 +42,11 @@ h1{
 }
 .content.green{
   background: #29B657;
+  height:100vh;
 }
-.congrats.show{
+.congrats.show, .try.show{
   display: block;
+}
+.try{
+  display:none;
 }

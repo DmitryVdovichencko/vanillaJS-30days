@@ -25,18 +25,23 @@ const highlightKey = (event,keyEl) => {
 } 
 const animatePage = (showT,startAnimate) => {
 	if(startAnimate){
+		document.querySelector(".try").classList.remove("show");
 		document.querySelector(".congrats").classList.add("show");
 		document.querySelector(".content").classList.add("green");
+		
 	setTimeout(
 		function() { 
 			document.querySelector(".congrats").classList.remove("show");
+
 			document.querySelector(".content").classList.remove("green"); 
+			document.querySelector(".try").classList.add("show");
 		}, showT);
 	}
 
 
 }
 const showKey = (event) => {
+
  	checkArrLength(arr,4).push(event.key);
  	animatePage(10000, checkArr(arr,"dima") );
  	
