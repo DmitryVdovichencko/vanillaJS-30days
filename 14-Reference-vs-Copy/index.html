@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Slide in on Scroll</title>
+  <title>Reference vs Copy</title>
    <link rel="stylesheet" href="style.css">
      <link href="https://fonts.googleapis.com/css?family=Heebo" rel="stylesheet"> 
 </head>
@@ -12,13 +12,103 @@
 
     <h1>Reference vs Copy in JS</h1>
     <section>
-      <h3>Primitive</h3>
+      <h3>Primitives</h3>
+      <p>Strings numbers and booleans are copied by value. If we'll change one variable, the other variable will not change.
+    </section>
+    <section>
+      <h3>Arrays</h3>
+      <p>Arrays are copied by reference.It means, that if one of these arrays will be changed, the other also will be changed. It works like that, because in variable we store the reference to the particular array</p>
+      <p>If we need a copy of array by value we have 4 options:</p>
+      <ul>
+        <li>Use  <code> .slice() </code>  method</li>
+        <li>Create new empty array and concat it with original array, like: <code> const newArr = [].concat(originalArr) </code></li>
+        <li>Use ES6 method <code> const newArr = [...originalArr] </code></li>
+        <li>Use Array method <code> const newArr = Array.from(originalArr) </code></li>
+      </ul>
+
+    </section>
+    <section>
+      <h3>Objects</h3>
+      <p>Objects also are copied by reference.It means, that if one of these objects will be changed, the other also will be changed. It works like that, because in variable we store the reference to the particular object</p>
+      <p>If we need a copy of object by value, we can use this method</p>
+      <p><code>const obj2 = Object.assign({}, obj, {newProp:34, originalProp: newValue})</code></p>
+    
+
     </section>
     
 
   </div>
 
+<script>
+      // start with strings, numbers and booleans
+      console.log(`Copying by value. Start with strings numbers and booleans.`);
+      let age = 100;
+      let age2 = age;
+      console.log(`Primitives before changing age = ${age} age2 = ${age2}`);
+      age = 200;
+      console.log(`Primitives after age was changed to 200: age = ${age} age2 = ${age2}`);
+      let name = "Carleone";
+      let name2 = name;
+      console.log(`Primitives before changing name = ${name} name2 = ${name2}`);
+      name = "Don";
+      console.log(`Primitives after name was changed to "Don": name = ${name} name2 = ${name2}`);
+      console.log(`***`);
 
+    // Let's say we have an array
+    console.log(`Playing with array`);
+
+    const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+
+    // and we want to make a copy of it.
+    const team = players;
+    console.log(`Here is our players arr ${players} and team arr ${team}`);
+    // You might think we can just do something like this:
+    team[3]='Lux'
+    // however what happens when we update that array?
+    console.log(`Here is our arrays after changing team arr: players arr = ${players} and team arr = ${team}`);
+    // now here is the problem!
+
+    // oh no - we have edited the original array too!
+
+    // Why? It's because that is an array reference, not an array copy. They both point to the same array!
+
+    // So, how do we fix this? We take a copy instead!
+
+    // one way
+    const team2 = players.slice();
+    console.log(`Here is our players arr ${players} and team2 arr ${team2}. Players arr was copied to team2 by .slice() method`);
+    players[0]='Dima';
+    console.log(`If we'll change original players array team2 still be the same. Look: players = ${players} and team2 arr = ${team2}`);
+    // or create a new array and concat the old one in
+    const team3 = [].concat(players);
+    console.log(`Here is our players arr ${players} and team3 arr ${team3}. Players arr was copied to team3 by .concat(arr) method`);
+    // or use the new ES6 Spread
+    const team4 = [...players];
+    team4[3] = "Ronaldo";
+    console.log(`Here is our players arr ${players} and team4 arr ${team4}. Players arr was copied to team4 by [...arr] ES6 method and then we change last el in team4 to Ronaldo but original arr is still the same, as expected`);
+    // now when we update it, the original one isn't changed
+    const team5 = Array.from(players);
+    team5[3] = "Messi";
+    console.log(`Here is our players arr ${players} and team5 arr ${team5}. Players arr was copied to team5 using Array.from(players) method and then we change last el in team5 to Messi but original arr is still the same, as expected`);
+    // The same thing goes for objects, let's say we have a person object
+    console.log(`***`);
+    // with Objects
+    const coach = {
+      name: 'Zidan',
+      age: 42
+    };
+    console.log(`Playing with objects`);
+
+    // and think we make a copy:
+    const player = coach;
+    player.number = 5;
+    // how do we take a copy instead?
+    console.log(`We make a copy by assignig "player" to "coach". Then we added number property only to player object, but here is coach object: ${JSON.stringify(coach)} and player object ${JSON.stringify(player)}. Both variables point to the same object with number property. It works like this because objects are copied by reference. `)
+    // We will hopefully soon see the object ...spread
+    const player2 = Object.assign({}, coach, {age:36, number:10, materrazzi:1});
+    console.log(`We make a copy by Object.assign() method. Then we added number age and materrazzi properties only to player2 object, here is coach object: ${JSON.stringify(coach)} and player2 object ${JSON.stringify(player2)}. `)
+    // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+</script>
 
 
 
