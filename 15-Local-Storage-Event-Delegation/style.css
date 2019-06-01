@@ -13,7 +13,35 @@ html {
 *, *:before, *:after {
   box-sizing: inherit; 
 }
+button{
+  border:none;
+  background: none;
+}
+.control{
+   display:flex;
+  flex-flow:row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.conrol__button{
+  display:flex;
+  flex-flow:row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 0.8em;
+  margin:10px 5px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background:lightgrey;
+  transition:all 0.8s ease;
+}
+.conrol__button:hover{
+  background:none;
+}
+.conrol__button img{
+  height:16px;
+  margin:5px;
 
+}
 svg {
   fill:white;
   background: rgba(0,0,0,0.1);
