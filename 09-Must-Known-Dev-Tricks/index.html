@@ -4,9 +4,15 @@
   <meta charset="UTF-8">
   <title>Console Tricks!</title>
    <link rel="stylesheet" href="style.css">
+   <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet"> 
 </head>
 <body>
+
+
 <h1>Must known Dev tricks!</h1>
+<div class="wrapper">
+<div class="content">
+<p onClick="makeBigger()">Make It BIGGER Mortyyy!</p>
   
   <svg
   class="hero-image"
@@ -264,7 +270,51 @@
     </g>
   </g>
 </svg>
-<p onClick="makeBigger()">Make It BIGGER Mortyyy!</p>
+</div>
+  <div class="tricks">
+    <h3>Console tricks</h3>
+    <code>
+      <p>// Regular</p>
+      <p>console.log('Hello');</p>
+       <p>// Interpolated</p>
+      <p>console.log(`Hello ${var}`);</p>
+       <p>// Styling</p>
+        <p>// Just use %c in the beginning and then pass css rule as second arg</p>
+      <p>console.log("%c I'm some great text", 'font-size:40px;');</p>
+      <p>// Warning</p>
+      <p>console.warn("Don't do it man!")</p>
+      <p>// Error</p>
+      <p>console.warn("I warn you! Now you got an error!")</p>
+      <p>// Info</p>
+      <p>console.info("Looks like somebody write too much code and doesn't sleep enough")</p>
+      <p>// Tesing</p>
+      <p>console.assert(1===2, 'that's wrong!')</p>
+       <p>// Clearing</p>
+      <p>console.clear()</p>
+        <p>// Viewing DOM Elements</p>
+        <p>// .dir show DOM elem in dropdown obj view</p>
+      const p = document.querySelector('p');
+      <p>console.dir(p)</p>
+      <p>// Grouping object</p>
+      <p>// Use .group and .groupEnd to grouping some strings. Use .groupCollapsed</p>
+      <p>const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];</p>
+      <p>
+        dogs.forEach(dog => {</p>
+        <p>console.group(`${dog.name}`)})</p>
+        <p>console.log(`Dog's name is ${dog.name}`)})</p>
+        <p>console.log(`Dog's age is ${dog.age}`)})</p>
+        <p>console.groupEnd(`${dog.name}`)})</p>
+      <p>// Use .count for counting use of string or object in console</p>
+      <p>console.count('Dimas')</p>
+      <p>console.count('Dimas')</p>
+      <p>// Use .time for checking time of executing operation and .timeEnd to end</p>
+      <p>console.time('fetching data')</p>
+      <p>...fetch some data</p>
+      <p>console.timeEnd('fetching data')</p>
+      
+    </code>
+  </div>
+</div>
 
   <script>
     const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
